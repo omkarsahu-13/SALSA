@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Nexora | S.A.L.S.A</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Oceanic Glassmorphism Stylesheet -->
+  <link rel="stylesheet" href="assets/css/ocean-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Oceanic Gradient Layer -->
+  <div class="ocean-ambient-layer"></div>
+  <!-- Dynamic HTML5 Background Canvas -->
+  <canvas id="ocean-canvas-bg"></canvas>
+
+  
+  <!-- Persistent Frosted Glass Navigation Bar -->
+  <header class="navbar-glass">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/nexora-logo.png" alt="Nexora Logo" class="nav-logo-img" style="width: 38px; height: 38px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 12px rgba(0,240,255,0.35); background: #ffffff; padding: 2px; display: block;">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">S.A.L.S.A</span>
+          <span class="nav-brand-subtitle">Team Nexora</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links with Dropdowns -->
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link ">Home</a>
+        </li>
+        
+        <!-- Overview Dropdown -->
+        <li class="nav-item">
+          <a href="about.html" class="nav-link ">
+            Overview ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="about.html" class="">📖 About the Project</a>
+            <a href="problem.html" class="">🚨 Problem Statement</a>
+            <a href="solution.html" class="">💡 Our Solution</a>
+          </div>
+        </li>
+
+        <!-- Engineering Dropdown -->
+        <li class="nav-item">
+          <a href="how-it-works.html" class="nav-link ">
+            Engineering ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="how-it-works.html" class="">⚙️ How It Works & Lab</a>
+            <a href="features.html" class="">✨ Core Features</a>
+            <a href="technology.html" class="">🏗️ System Architecture</a>
+          </div>
+        </li>
+
+        <!-- Commercial Dropdown -->
+        <li class="nav-item">
+          <a href="market.html" class="nav-link ">
+            Commercial ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="market.html" class="">📊 Market Analysis</a>
+            <a href="budget.html" class="">💰 Financial Analysis</a>
+          </div>
+        </li>
+
+        <!-- Impact & Scope Dropdown -->
+        <li class="nav-item">
+          <a href="impact.html" class="nav-link ">
+            Impact & Scope ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="impact.html" class="">🌍 Impact & Benefits</a>
+            <a href="future-scope.html" class="">🔮 Future Scope</a>
+          </div>
+        </li>
+
+        <!-- Direct Team Nexora Nav Link -->
+        <li class="nav-item">
+          <a href="team.html" class="nav-link active">Team Nexora</a>
+        </li>
+      </ul>
+
+      <!-- Action Button -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="how-it-works.html" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          ⚡ Live Simulator
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link ">🏠 Home</a>
+    
+    <div class="mobile-drawer-group-title">Overview</div>
+    <a href="about.html" class="mobile-nav-link ">📖 About the Project</a>
+    <a href="problem.html" class="mobile-nav-link ">🚨 Problem Statement</a>
+    <a href="solution.html" class="mobile-nav-link ">💡 Our Solution</a>
+
+    <div class="mobile-drawer-group-title">Engineering</div>
+    <a href="how-it-works.html" class="mobile-nav-link ">⚙️ How It Works & Lab</a>
+    <a href="features.html" class="mobile-nav-link ">✨ Core Features</a>
+    <a href="technology.html" class="mobile-nav-link ">🏗️ System Architecture</a>
+
+    <div class="mobile-drawer-group-title">Commercial</div>
+    <a href="market.html" class="mobile-nav-link ">📊 Market Analysis</a>
+    <a href="budget.html" class="mobile-nav-link ">💰 Financial Analysis</a>
+
+    <div class="mobile-drawer-group-title">Impact & Scope</div>
+    <a href="impact.html" class="mobile-nav-link ">🌍 Impact & Benefits</a>
+    <a href="future-scope.html" class="mobile-nav-link ">🔮 Future Scope</a>
+
+    <div class="mobile-drawer-group-title">Team</div>
+    <a href="team.html" class="mobile-nav-link active">👥 Team Nexora</a>
+  </div>
+  
+
+  <main class="page-container">
+    
+  <section class="page-hero">
+    <span class="glass-pill emerald">ENGINEERING SQUAD</span>
+    <h1 class="page-title gradient-text-cyan">Team Nexora</h1>
+    <p class="page-subtitle">
+      Six-member multidisciplinary engineering squad uniting Computer Science &amp; Engineering, Electronics &amp; Telecommunication, and Mechanical Engineering.
+    </p>
+  </section>
+
+  <!-- 6 Visual Member Profile Cards: Clean 3-3 Balanced Grid (No Descriptions, Custom Glowing Palette) -->
+  <section style="margin-bottom: 3.5rem;">
+    <div style="text-align: center; margin-bottom: 2.5rem;">
+      <span class="glass-pill">CORE ROLES</span>
+      <h2 style="font-size: 1.9rem; margin-top: 0.4rem;" class="gradient-text-cyan">Team Members &amp; Roles</h2>
+    </div>
+
+    <!-- Row 1: 3 Members -->
+    <div class="grid-3" style="margin-bottom: 1.5rem;">
+      <!-- 1. Mayukh Mondal (Cyan / Aqua Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(0, 240, 255, 0.6); box-shadow: 0 8px 30px rgba(0, 240, 255, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">👑</div>
+        <span style="background: rgba(0, 240, 255, 0.18); border: 1px solid #00f0ff; color: #67e8f9; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          CSE • Team Lead
+        </span>
+        <h3 style="color: #00f0ff; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Mayukh Mondal
+        </h3>
+        <div style="color: #e0f2fe; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          Team Lead &amp; Firmware Architect
+        </div>
+      </div>
+
+      <!-- 2. Bhavya Kumari (Emerald Green Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(16, 185, 129, 0.6); box-shadow: 0 8px 30px rgba(16, 185, 129, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">⚡</div>
+        <span style="background: rgba(16, 185, 129, 0.18); border: 1px solid #10b981; color: #a7f3d0; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          ET&amp;T • Embedded Hardware
+        </span>
+        <h3 style="color: #34d399; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Bhavya Kumari
+        </h3>
+        <div style="color: #d1fae5; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          Embedded Systems Engineer
+        </div>
+      </div>
+
+      <!-- 3. Kashish Shariff (Amber / Gold Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(245, 158, 11, 0.6); box-shadow: 0 8px 30px rgba(245, 158, 11, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🌊</div>
+        <span style="background: rgba(245, 158, 11, 0.18); border: 1px solid #f59e0b; color: #fde68a; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          ET&amp;T • Signal Processing
+        </span>
+        <h3 style="color: #fbbf24; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Kashish Shariff
+        </h3>
+        <div style="color: #fef3c7; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          Signal Processing Specialist
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 3 Members -->
+    <div class="grid-3">
+      <!-- 4. Omkar Sahu (Electric Purple / Violet Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(168, 85, 247, 0.6); box-shadow: 0 8px 30px rgba(168, 85, 247, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">💻</div>
+        <span style="background: rgba(168, 85, 247, 0.18); border: 1px solid #a855f7; color: #e9d5ff; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          CSE • Software &amp; Simulation
+        </span>
+        <h3 style="color: #c084fc; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Omkar Sahu
+        </h3>
+        <div style="color: #f3e8ff; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          Software &amp; Simulation Engineer
+        </div>
+      </div>
+
+      <!-- 5. Kanak Narware (Vibrant Orange Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(249, 115, 22, 0.6); box-shadow: 0 8px 30px rgba(249, 115, 22, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">📊</div>
+        <span style="background: rgba(249, 115, 22, 0.18); border: 1px solid #f97316; color: #fed7aa; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          CSE • UI/UX &amp; Analytics
+        </span>
+        <h3 style="color: #fb923c; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Kanak Narware
+        </h3>
+        <div style="color: #ffedd5; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          UI/UX &amp; Data Analyst
+        </div>
+      </div>
+
+      <!-- 6. Shubham Mishra (Radiant Rose / Pink / Red Theme) -->
+      <div class="glass-card" style="border: 2px solid rgba(244, 63, 94, 0.6); box-shadow: 0 8px 30px rgba(244, 63, 94, 0.25); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 2.25rem 1.5rem;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">⚙️</div>
+        <span style="background: rgba(244, 63, 94, 0.18); border: 1px solid #f43f5e; color: #fecdd3; font-weight: 800; font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; margin-bottom: 0.75rem; text-transform: uppercase;">
+          Mech • CAD &amp; Hardware
+        </span>
+        <h3 style="color: #fb7185; font-size: 1.45rem; margin-bottom: 0.35rem; font-weight: 900; letter-spacing: -0.01em;">
+          Shubham Mishra
+        </h3>
+        <div style="color: #ffe4e6; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;">
+          Mechanical Design Engineer
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Discipline Collaboration Workflow -->
+  <section style="margin-bottom: 2rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="glass-pill">COLLABORATION WORKFLOW</span>
+      <h2 style="font-size: 1.8rem; margin-top: 0.4rem;" class="gradient-text-cyan">Seamless Engineering Synergy</h2>
+    </div>
+
+    <div class="step-pipeline">
+      <div class="step-node">
+        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">1. Concept &amp; Math</h4>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">Mathematical modeling of LFM chirps.</p>
+      </div>
+      <div class="step-node">
+        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">2. Hardware Circuit</h4>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">ESP32 + DAC + LM358 breadboard wiring.</p>
+      </div>
+      <div class="step-node">
+        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">3. Firmware &amp; DSP</h4>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">C/C++ firmware with DMA timers.</p>
+      </div>
+      <div class="step-node">
+        <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">4. CAD &amp; Enclosure</h4>
+        <p style="color: var(--text-muted); font-size: 0.8rem;">3D printing custom PLA housing.</p>
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Bottom Page Navigation Bar -->
+    
+      <div class="page-nav-bar">
+        <div>
+          
+            <a href="future-scope.html" class="btn-secondary">
+              ← Future Scope
+            </a>
+          
+        </div>
+        <div>
+          
+            <a href="index.html" class="btn-primary">
+              Return to Home →
+            </a>
+          
+        </div>
+      </div>
+    
+  </main>
+
+  
+  <!-- Persistent Glassmorphism Footer -->
+  <footer class="footer-glass">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+          <img src="assets/images/nexora-logo.png" alt="Nexora Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 6px; background: #ffffff; padding: 2px; display: block;">
+          <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">S.A.L.S.A</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6;">
+          Secure Acoustic Ledger For Subsea Autonomy — Development of a Low Power, Real-Time Adaptive Software-Defined Sonar Transmitter Payload for Autonomous Underwater Vehicles (AUVs).
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="glass-pill">Team Nexora</span>
+          <span class="glass-pill emerald">Autonomous Subsea Payload</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Overview & Solution</h4>
+        <ul>
+          <li><a href="index.html">Home / Overview</a></li>
+          <li><a href="about.html">About the Project</a></li>
+          <li><a href="problem.html">Problem Statement</a></li>
+          <li><a href="solution.html">Our Solution</a></li>
+          <li><a href="how-it-works.html">How It Works & Lab</a></li>
+          <li><a href="features.html">Core Features</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Technical & Commercial</h4>
+        <ul>
+          <li><a href="technology.html">5-Layer Architecture</a></li>
+          <li><a href="market.html">Market Analysis (TAM/SAM/SOM)</a></li>
+          <li><a href="budget.html">Financial & ROI Analysis</a></li>
+          <li><a href="impact.html">Impact & Benefits</a></li>
+          <li><a href="future-scope.html">Future Scope</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Team Nexora</h4>
+        <ul>
+          <li><a href="team.html">Team Nexora (All 6 Members)</a></li>
+          <li><a href="how-it-works.html">Live Sonar Laboratory</a></li>
+          <li><a href="about.html">Project Overview</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="max-width: 1280px; margin: 2rem auto 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(0,240,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; color: var(--text-muted);">
+      <div>© Team Nexora • S.A.L.S.A Project</div>
+      <div>Ministry of Earth Sciences &amp; NIOT Aligned Specifications</div>
+    </div>
+  </footer>
+
+  <!-- Persistent Bottom Telemetry HUD -->
+  <div class="telemetry-hud">
+    <div class="hud-item">
+      <span class="hud-dot"></span>
+      <span>SYSTEM: <strong style="color: #ffffff;">ONLINE</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>SIMULATED DEPTH: <strong id="hud-depth" style="color: var(--cyan-primary);">157 m</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>ACTIVE PING FREQ: <strong id="hud-freq" style="color: var(--cyan-primary);">500.0 kHz</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>POWER DRAW: <strong id="hud-power" style="color: #10b981;">80 mA (Adaptive)</strong></span>
+    </div>
+    <div class="hud-item">
+      <button id="hud-ping-trigger" class="glass-pill" style="cursor: pointer; padding: 0.2rem 0.6rem; font-size: 0.7rem; border-color: var(--cyan-primary);">
+        🔊 PING SONAR
+      </button>
+    </div>
+  </div>
+  
+
+  <!-- Global JavaScript Engines -->
+  <script src="assets/js/ocean-canvas.js"></script>
+  <script src="assets/js/salsa-simulator.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  
+</body>
+</html>

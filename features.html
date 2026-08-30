@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Core Features | S.A.L.S.A</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Oceanic Glassmorphism Stylesheet -->
+  <link rel="stylesheet" href="assets/css/ocean-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Oceanic Gradient Layer -->
+  <div class="ocean-ambient-layer"></div>
+  <!-- Dynamic HTML5 Background Canvas -->
+  <canvas id="ocean-canvas-bg"></canvas>
+
+  
+  <!-- Persistent Frosted Glass Navigation Bar -->
+  <header class="navbar-glass">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/nexora-logo.png" alt="Nexora Logo" class="nav-logo-img" style="width: 38px; height: 38px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 12px rgba(0,240,255,0.35); background: #ffffff; padding: 2px; display: block;">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">S.A.L.S.A</span>
+          <span class="nav-brand-subtitle">Team Nexora</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links with Dropdowns -->
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link ">Home</a>
+        </li>
+        
+        <!-- Overview Dropdown -->
+        <li class="nav-item">
+          <a href="about.html" class="nav-link ">
+            Overview ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="about.html" class="">📖 About the Project</a>
+            <a href="problem.html" class="">🚨 Problem Statement</a>
+            <a href="solution.html" class="">💡 Our Solution</a>
+          </div>
+        </li>
+
+        <!-- Engineering Dropdown -->
+        <li class="nav-item">
+          <a href="how-it-works.html" class="nav-link active">
+            Engineering ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="how-it-works.html" class="">⚙️ How It Works & Lab</a>
+            <a href="features.html" class="active">✨ Core Features</a>
+            <a href="technology.html" class="">🏗️ System Architecture</a>
+          </div>
+        </li>
+
+        <!-- Commercial Dropdown -->
+        <li class="nav-item">
+          <a href="market.html" class="nav-link ">
+            Commercial ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="market.html" class="">📊 Market Analysis</a>
+            <a href="budget.html" class="">💰 Financial Analysis</a>
+          </div>
+        </li>
+
+        <!-- Impact & Scope Dropdown -->
+        <li class="nav-item">
+          <a href="impact.html" class="nav-link ">
+            Impact & Scope ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="impact.html" class="">🌍 Impact & Benefits</a>
+            <a href="future-scope.html" class="">🔮 Future Scope</a>
+          </div>
+        </li>
+
+        <!-- Direct Team Nexora Nav Link -->
+        <li class="nav-item">
+          <a href="team.html" class="nav-link ">Team Nexora</a>
+        </li>
+      </ul>
+
+      <!-- Action Button -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="how-it-works.html" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          ⚡ Live Simulator
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link ">🏠 Home</a>
+    
+    <div class="mobile-drawer-group-title">Overview</div>
+    <a href="about.html" class="mobile-nav-link ">📖 About the Project</a>
+    <a href="problem.html" class="mobile-nav-link ">🚨 Problem Statement</a>
+    <a href="solution.html" class="mobile-nav-link ">💡 Our Solution</a>
+
+    <div class="mobile-drawer-group-title">Engineering</div>
+    <a href="how-it-works.html" class="mobile-nav-link ">⚙️ How It Works & Lab</a>
+    <a href="features.html" class="mobile-nav-link active">✨ Core Features</a>
+    <a href="technology.html" class="mobile-nav-link ">🏗️ System Architecture</a>
+
+    <div class="mobile-drawer-group-title">Commercial</div>
+    <a href="market.html" class="mobile-nav-link ">📊 Market Analysis</a>
+    <a href="budget.html" class="mobile-nav-link ">💰 Financial Analysis</a>
+
+    <div class="mobile-drawer-group-title">Impact & Scope</div>
+    <a href="impact.html" class="mobile-nav-link ">🌍 Impact & Benefits</a>
+    <a href="future-scope.html" class="mobile-nav-link ">🔮 Future Scope</a>
+
+    <div class="mobile-drawer-group-title">Team</div>
+    <a href="team.html" class="mobile-nav-link ">👥 Team Nexora</a>
+  </div>
+  
+
+  <main class="page-container">
+    
+  <section class="page-hero">
+    <span class="glass-pill">SYSTEM CAPABILITIES</span>
+    <h1 class="page-title gradient-text-cyan">Core Features &amp; Waveforms</h1>
+    <p class="page-subtitle">
+      Visual breakdown of S.A.L.S.A's 7 core architectural capabilities and 5 distinct transmission waveform modes.
+    </p>
+  </section>
+
+  <!-- 7 Visual Feature Cards -->
+  <section style="margin-bottom: 4rem;">
+    <div style="margin-bottom: 2rem;">
+      <span class="glass-pill">ARCHITECTURAL HIGHLIGHTS</span>
+      <h2 style="font-size: 1.8rem; margin-top: 0.4rem;" class="gradient-text-cyan">7 Core Features Overview</h2>
+    </div>
+
+    <div class="grid-3">
+      <div class="glass-card" style="border-top: 3px solid var(--cyan-primary);">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">⚡</div>
+        <h3 style="color: var(--cyan-primary); font-size: 1.15rem; margin-bottom: 0.25rem;">1. Adaptive Switching</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">5 frequency bands (100, 200, 300, 400, 500 kHz) switched in &lt; 150 ms based on water clarity.</p>
+        <span class="glass-pill" style="font-size: 0.7rem; margin-top: 0.75rem;">100–500 kHz</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #38bdf8;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🎯</div>
+        <h3 style="color: #38bdf8; font-size: 1.15rem; margin-bottom: 0.25rem;">2. 12-Bit DAC Output</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">External MCP4725 converter with 4096 voltage levels, 0–3.3V rail-to-rail, and 6µs settling time.</p>
+        <span class="glass-pill" style="font-size: 0.7rem; margin-top: 0.75rem;">4096 Levels • I2C 400kHz</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #34d399;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🌊</div>
+        <h3 style="color: #34d399; font-size: 1.15rem; margin-bottom: 0.25rem;">3. Multi-Waveform DSP</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Synthesizes CW, LFM Up/Down, Barker-7, and Geometric Exponential Sweeps with Hamming windows.</p>
+        <span class="glass-pill emerald" style="font-size: 0.7rem; margin-top: 0.75rem;">5 DSP Modes</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #10b981;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🔋</div>
+        <h3 style="color: #10b981; font-size: 1.15rem; margin-bottom: 0.25rem;">4. Power Management</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Dynamic current (35–80 mA) and CPU scaling (80–240 MHz) yielding 56% energy savings.</p>
+        <span class="glass-pill emerald" style="font-size: 0.7rem; margin-top: 0.75rem;">+40% Mission Life</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #facc15;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🎛️</div>
+        <h3 style="color: #facc15; font-size: 1.15rem; margin-bottom: 0.25rem;">5. 3-Stage Conditioning</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">10µF DC blocker, 159 kHz RC low-pass filter, and LM358 op-amp buffer for &lt;1% THD.</p>
+        <span class="glass-pill amber" style="font-size: 0.7rem; margin-top: 0.75rem;">SNR &gt; 40 dB</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #fb923c;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">📺</div>
+        <h3 style="color: #fb923c; font-size: 1.15rem; margin-bottom: 0.25rem;">6. OLED Telemetry</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">SSD1306 128×64 display showing live environment, frequency, power %, current, and TX status.</p>
+        <span class="glass-pill" style="font-size: 0.7rem; margin-top: 0.75rem;">Real-Time HUD</span>
+      </div>
+
+      <div class="glass-card" style="border-top: 3px solid #a855f7; grid-column: span 3;">
+        <div style="font-size: 2.25rem; margin-bottom: 0.5rem;">🔌</div>
+        <h3 style="color: #c084fc; font-size: 1.15rem; margin-bottom: 0.25rem;">7. Modular Plug-and-Play Architecture</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Custom 3D-printed enclosure, standard BNC connector, and compatibility with Pixhawk &amp; ArduPilot drone flight controllers.</p>
+        <span class="glass-pill purple" style="font-size: 0.7rem; margin-top: 0.75rem;">AUV Drop-In Payload</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Transmission Waveform Modes -->
+  <section class="glass-panel" style="padding: 2.5rem; margin-bottom: 3.5rem;">
+    <div style="margin-bottom: 2rem;">
+      <span class="glass-pill emerald">DSP MODULATION MODES</span>
+      <h2 style="font-size: 1.8rem; margin-top: 0.4rem;" class="gradient-text-cyan">5 Waveform Transmission Modes</h2>
+    </div>
+
+    <div class="grid-2">
+      <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h4 style="color: #ffffff; font-size: 1.1rem;">1. CW Pulse (Continuous Wave)</h4>
+          <span class="glass-pill">Narrowband</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Fixed-frequency sine pulse for Doppler velocity measurement and rapid range profiling.</p>
+      </div>
+
+      <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h4 style="color: var(--cyan-primary); font-size: 1.1rem;">2. LFM Up Chirp (Linear Sweep)</h4>
+          <span class="glass-pill emerald">High Resolution</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Linear sweep from low to high frequency (100–500 kHz) for pulse-compressed shallow reef mapping.</p>
+      </div>
+
+      <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h4 style="color: #38bdf8; font-size: 1.1rem;">3. LFM Down Chirp (Reverse Sweep)</h4>
+          <span class="glass-pill">Low Doppler Error</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Reverse linear sweep eliminates range-Doppler coupling errors in dynamic subsea navigation.</p>
+      </div>
+
+      <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h4 style="color: #facc15; font-size: 1.1rem;">4. Phase-Coded (Barker-7)</h4>
+          <span class="glass-pill amber">High Penetration</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Binary phase modulation [+1, +1, +1, -1, -1, +1, -1] for extreme noise immunity in heavy mud.</p>
+      </div>
+
+      <div class="glass-card" style="grid-column: span 2;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.35rem;">
+          <h4 style="color: #c084fc; font-size: 1.1rem;">5. Geometric Sweep (Exponential Chirp)</h4>
+          <span class="glass-pill purple">Constant Q</span>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Exponential frequency chirp maintaining constant fractional bandwidth for wideband oceanographic surveys.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Power Modes Breakdown -->
+  <section style="margin-bottom: 2rem;">
+    <div style="margin-bottom: 1.5rem;">
+      <span class="glass-pill">DYNAMIC POWER MODES</span>
+      <h2 style="font-size: 1.8rem; margin-top: 0.4rem;" class="gradient-text-cyan">Power Scaling vs Current Draw</h2>
+    </div>
+    <div id="power-modes-chart"></div>
+  </section>
+
+
+    <!-- Bottom Page Navigation Bar -->
+    
+      <div class="page-nav-bar">
+        <div>
+          
+            <a href="how-it-works.html" class="btn-secondary">
+              ← How It Works
+            </a>
+          
+        </div>
+        <div>
+          
+            <a href="technology.html" class="btn-primary">
+              System Architecture →
+            </a>
+          
+        </div>
+      </div>
+    
+  </main>
+
+  
+  <!-- Persistent Glassmorphism Footer -->
+  <footer class="footer-glass">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+          <img src="assets/images/nexora-logo.png" alt="Nexora Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 6px; background: #ffffff; padding: 2px; display: block;">
+          <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">S.A.L.S.A</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6;">
+          Secure Acoustic Ledger For Subsea Autonomy — Development of a Low Power, Real-Time Adaptive Software-Defined Sonar Transmitter Payload for Autonomous Underwater Vehicles (AUVs).
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="glass-pill">Team Nexora</span>
+          <span class="glass-pill emerald">Autonomous Subsea Payload</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Overview & Solution</h4>
+        <ul>
+          <li><a href="index.html">Home / Overview</a></li>
+          <li><a href="about.html">About the Project</a></li>
+          <li><a href="problem.html">Problem Statement</a></li>
+          <li><a href="solution.html">Our Solution</a></li>
+          <li><a href="how-it-works.html">How It Works & Lab</a></li>
+          <li><a href="features.html">Core Features</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Technical & Commercial</h4>
+        <ul>
+          <li><a href="technology.html">5-Layer Architecture</a></li>
+          <li><a href="market.html">Market Analysis (TAM/SAM/SOM)</a></li>
+          <li><a href="budget.html">Financial & ROI Analysis</a></li>
+          <li><a href="impact.html">Impact & Benefits</a></li>
+          <li><a href="future-scope.html">Future Scope</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Team Nexora</h4>
+        <ul>
+          <li><a href="team.html">Team Nexora (All 6 Members)</a></li>
+          <li><a href="how-it-works.html">Live Sonar Laboratory</a></li>
+          <li><a href="about.html">Project Overview</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="max-width: 1280px; margin: 2rem auto 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(0,240,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; color: var(--text-muted);">
+      <div>© Team Nexora • S.A.L.S.A Project</div>
+      <div>Ministry of Earth Sciences &amp; NIOT Aligned Specifications</div>
+    </div>
+  </footer>
+
+  <!-- Persistent Bottom Telemetry HUD -->
+  <div class="telemetry-hud">
+    <div class="hud-item">
+      <span class="hud-dot"></span>
+      <span>SYSTEM: <strong style="color: #ffffff;">ONLINE</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>SIMULATED DEPTH: <strong id="hud-depth" style="color: var(--cyan-primary);">157 m</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>ACTIVE PING FREQ: <strong id="hud-freq" style="color: var(--cyan-primary);">500.0 kHz</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>POWER DRAW: <strong id="hud-power" style="color: #10b981;">80 mA (Adaptive)</strong></span>
+    </div>
+    <div class="hud-item">
+      <button id="hud-ping-trigger" class="glass-pill" style="cursor: pointer; padding: 0.2rem 0.6rem; font-size: 0.7rem; border-color: var(--cyan-primary);">
+        🔊 PING SONAR
+      </button>
+    </div>
+  </div>
+  
+
+  <!-- Global JavaScript Engines -->
+  <script src="assets/js/ocean-canvas.js"></script>
+  <script src="assets/js/salsa-simulator.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Solution | S.A.L.S.A</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Oceanic Glassmorphism Stylesheet -->
+  <link rel="stylesheet" href="assets/css/ocean-theme.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Ambient Oceanic Gradient Layer -->
+  <div class="ocean-ambient-layer"></div>
+  <!-- Dynamic HTML5 Background Canvas -->
+  <canvas id="ocean-canvas-bg"></canvas>
+
+  
+  <!-- Persistent Frosted Glass Navigation Bar -->
+  <header class="navbar-glass">
+    <div class="navbar-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/nexora-logo.png" alt="Nexora Logo" class="nav-logo-img" style="width: 38px; height: 38px; object-fit: contain; border-radius: 8px; box-shadow: 0 0 12px rgba(0,240,255,0.35); background: #ffffff; padding: 2px; display: block;">
+        <div class="nav-brand-text">
+          <span class="nav-brand-title">S.A.L.S.A</span>
+          <span class="nav-brand-subtitle">Team Nexora</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links with Dropdowns -->
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link ">Home</a>
+        </li>
+        
+        <!-- Overview Dropdown -->
+        <li class="nav-item">
+          <a href="about.html" class="nav-link active">
+            Overview ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="about.html" class="">📖 About the Project</a>
+            <a href="problem.html" class="">🚨 Problem Statement</a>
+            <a href="solution.html" class="active">💡 Our Solution</a>
+          </div>
+        </li>
+
+        <!-- Engineering Dropdown -->
+        <li class="nav-item">
+          <a href="how-it-works.html" class="nav-link ">
+            Engineering ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="how-it-works.html" class="">⚙️ How It Works & Lab</a>
+            <a href="features.html" class="">✨ Core Features</a>
+            <a href="technology.html" class="">🏗️ System Architecture</a>
+          </div>
+        </li>
+
+        <!-- Commercial Dropdown -->
+        <li class="nav-item">
+          <a href="market.html" class="nav-link ">
+            Commercial ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="market.html" class="">📊 Market Analysis</a>
+            <a href="budget.html" class="">💰 Financial Analysis</a>
+          </div>
+        </li>
+
+        <!-- Impact & Scope Dropdown -->
+        <li class="nav-item">
+          <a href="impact.html" class="nav-link ">
+            Impact & Scope ▾
+          </a>
+          <div class="nav-dropdown">
+            <a href="impact.html" class="">🌍 Impact & Benefits</a>
+            <a href="future-scope.html" class="">🔮 Future Scope</a>
+          </div>
+        </li>
+
+        <!-- Direct Team Nexora Nav Link -->
+        <li class="nav-item">
+          <a href="team.html" class="nav-link ">Team Nexora</a>
+        </li>
+      </ul>
+
+      <!-- Action Button -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="how-it-works.html" class="btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          ⚡ Live Simulator
+        </a>
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <a href="index.html" class="mobile-nav-link ">🏠 Home</a>
+    
+    <div class="mobile-drawer-group-title">Overview</div>
+    <a href="about.html" class="mobile-nav-link ">📖 About the Project</a>
+    <a href="problem.html" class="mobile-nav-link ">🚨 Problem Statement</a>
+    <a href="solution.html" class="mobile-nav-link active">💡 Our Solution</a>
+
+    <div class="mobile-drawer-group-title">Engineering</div>
+    <a href="how-it-works.html" class="mobile-nav-link ">⚙️ How It Works & Lab</a>
+    <a href="features.html" class="mobile-nav-link ">✨ Core Features</a>
+    <a href="technology.html" class="mobile-nav-link ">🏗️ System Architecture</a>
+
+    <div class="mobile-drawer-group-title">Commercial</div>
+    <a href="market.html" class="mobile-nav-link ">📊 Market Analysis</a>
+    <a href="budget.html" class="mobile-nav-link ">💰 Financial Analysis</a>
+
+    <div class="mobile-drawer-group-title">Impact & Scope</div>
+    <a href="impact.html" class="mobile-nav-link ">🌍 Impact & Benefits</a>
+    <a href="future-scope.html" class="mobile-nav-link ">🔮 Future Scope</a>
+
+    <div class="mobile-drawer-group-title">Team</div>
+    <a href="team.html" class="mobile-nav-link ">👥 Team Nexora</a>
+  </div>
+  
+
+  <main class="page-container">
+    
+  <section class="page-hero">
+    <span class="glass-pill">PROPOSED ARCHITECTURE</span>
+    <h1 class="page-title gradient-text-cyan">The S.A.L.S.A Solution</h1>
+    <p class="page-subtitle">
+      A 4-step closed-loop adaptive pipeline: Sense, Decide, Generate, and Adapt executed in &lt; 150 ms.
+    </p>
+  </section>
+
+  <!-- 4-Step Animated Pipeline Flow -->
+  <section class="glass-panel" style="padding: 2.5rem; margin-bottom: 3.5rem;">
+    <div style="text-align: center; margin-bottom: 2rem;">
+      <span class="glass-pill emerald">CLOSED-LOOP AUTONOMOUS FLOW</span>
+      <h2 style="font-size: 1.8rem; margin-top: 0.4rem;" class="gradient-text-cyan">4-Step Intelligent Architecture</h2>
+    </div>
+
+    <div class="grid-4">
+      <div class="glass-card text-center">
+        <div class="step-number">1</div>
+        <h3 style="color: var(--cyan-primary); font-size: 1.15rem; margin-bottom: 0.35rem;">SENSE</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Reads Turbidity (GPIO36), Depth (GPIO39), &amp; Temp (25°C) with 12-bit ADC.</p>
+        <span class="glass-pill" style="font-size: 0.7rem; margin-top: 0.5rem;">30-Sample Avg</span>
+      </div>
+
+      <div class="glass-card text-center">
+        <div class="step-number">2</div>
+        <h3 style="color: #facc15; font-size: 1.15rem; margin-bottom: 0.35rem;">DECIDE</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">ESP32 selects frequency (100–500kHz), power (35–80mA), and waveform mode.</p>
+        <span class="glass-pill amber" style="font-size: 0.7rem; margin-top: 0.5rem;">Adaptive Logic</span>
+      </div>
+
+      <div class="glass-card text-center">
+        <div class="step-number">3</div>
+        <h3 style="color: #38bdf8; font-size: 1.15rem; margin-bottom: 0.35rem;">GENERATE</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Digital synthesis + Hamming window ➔ 12-bit DAC ➔ 3-stage filter chain.</p>
+        <span class="glass-pill" style="font-size: 0.7rem; margin-top: 0.5rem;">MCP4725 + LM358</span>
+      </div>
+
+      <div class="glass-card text-center">
+        <div class="step-number">4</div>
+        <h3 style="color: #10b981; font-size: 1.15rem; margin-bottom: 0.35rem;">ADAPT</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem;">Continuous closed-loop parameter recalibration in &lt; 150 ms.</p>
+        <span class="glass-pill emerald" style="font-size: 0.7rem; margin-top: 0.5rem;">&lt; 150 ms Loop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 Innovation Badges -->
+  <section class="grid-4" style="margin-bottom: 2rem;">
+    <div class="infographic-box">
+      <div class="infographic-icon">⚡</div>
+      <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">100–500 kHz Auto</h4>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">First low-cost embedded system switching frequencies automatically in water.</p>
+    </div>
+
+    <div class="infographic-box">
+      <div class="infographic-icon">🧠</div>
+      <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">Subsea Autonomy</h4>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">Enables AUVs to independently modulate transmission without operator inputs.</p>
+    </div>
+
+    <div class="infographic-box">
+      <div class="infographic-icon">📉</div>
+      <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">CPU Clock Scaling</h4>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">ESP32 frequency (80–240 MHz) synced with DSP waveform generation load.</p>
+    </div>
+
+    <div class="infographic-box">
+      <div class="infographic-icon">🔌</div>
+      <h4 style="color: #ffffff; font-size: 1rem; margin-bottom: 0.25rem;">AUV Plug-and-Play</h4>
+      <p style="color: var(--text-muted); font-size: 0.8rem;">Compact modular design with standard BNC connector and 3D enclosure.</p>
+    </div>
+  </section>
+
+
+    <!-- Bottom Page Navigation Bar -->
+    
+      <div class="page-nav-bar">
+        <div>
+          
+            <a href="problem.html" class="btn-secondary">
+              ← Problem Statement
+            </a>
+          
+        </div>
+        <div>
+          
+            <a href="how-it-works.html" class="btn-primary">
+              How It Works & Lab →
+            </a>
+          
+        </div>
+      </div>
+    
+  </main>
+
+  
+  <!-- Persistent Glassmorphism Footer -->
+  <footer class="footer-glass">
+    <div class="footer-container">
+      <div class="footer-col">
+        <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1rem;">
+          <img src="assets/images/nexora-logo.png" alt="Nexora Logo" style="width: 32px; height: 32px; object-fit: contain; border-radius: 6px; background: #ffffff; padding: 2px; display: block;">
+          <span style="font-size: 1.25rem; font-weight: 800; color: #ffffff;">S.A.L.S.A</span>
+        </div>
+        <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.6;">
+          Secure Acoustic Ledger For Subsea Autonomy — Development of a Low Power, Real-Time Adaptive Software-Defined Sonar Transmitter Payload for Autonomous Underwater Vehicles (AUVs).
+        </p>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <span class="glass-pill">Team Nexora</span>
+          <span class="glass-pill emerald">Autonomous Subsea Payload</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Overview & Solution</h4>
+        <ul>
+          <li><a href="index.html">Home / Overview</a></li>
+          <li><a href="about.html">About the Project</a></li>
+          <li><a href="problem.html">Problem Statement</a></li>
+          <li><a href="solution.html">Our Solution</a></li>
+          <li><a href="how-it-works.html">How It Works & Lab</a></li>
+          <li><a href="features.html">Core Features</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Technical & Commercial</h4>
+        <ul>
+          <li><a href="technology.html">5-Layer Architecture</a></li>
+          <li><a href="market.html">Market Analysis (TAM/SAM/SOM)</a></li>
+          <li><a href="budget.html">Financial & ROI Analysis</a></li>
+          <li><a href="impact.html">Impact & Benefits</a></li>
+          <li><a href="future-scope.html">Future Scope</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Team Nexora</h4>
+        <ul>
+          <li><a href="team.html">Team Nexora (All 6 Members)</a></li>
+          <li><a href="how-it-works.html">Live Sonar Laboratory</a></li>
+          <li><a href="about.html">Project Overview</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div style="max-width: 1280px; margin: 2rem auto 0 auto; padding-top: 1.5rem; border-top: 1px solid rgba(0,240,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: 0.8125rem; color: var(--text-muted);">
+      <div>© Team Nexora • S.A.L.S.A Project</div>
+      <div>Ministry of Earth Sciences &amp; NIOT Aligned Specifications</div>
+    </div>
+  </footer>
+
+  <!-- Persistent Bottom Telemetry HUD -->
+  <div class="telemetry-hud">
+    <div class="hud-item">
+      <span class="hud-dot"></span>
+      <span>SYSTEM: <strong style="color: #ffffff;">ONLINE</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>SIMULATED DEPTH: <strong id="hud-depth" style="color: var(--cyan-primary);">157 m</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>ACTIVE PING FREQ: <strong id="hud-freq" style="color: var(--cyan-primary);">500.0 kHz</strong></span>
+    </div>
+    <div class="hud-item">
+      <span>POWER DRAW: <strong id="hud-power" style="color: #10b981;">80 mA (Adaptive)</strong></span>
+    </div>
+    <div class="hud-item">
+      <button id="hud-ping-trigger" class="glass-pill" style="cursor: pointer; padding: 0.2rem 0.6rem; font-size: 0.7rem; border-color: var(--cyan-primary);">
+        🔊 PING SONAR
+      </button>
+    </div>
+  </div>
+  
+
+  <!-- Global JavaScript Engines -->
+  <script src="assets/js/ocean-canvas.js"></script>
+  <script src="assets/js/salsa-simulator.js"></script>
+  <script src="assets/js/charts.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  
+</body>
+</html>

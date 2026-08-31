@@ -89,10 +89,6 @@ Traditional subsea acoustic systems are rigid, bulky, expensive, and consume sig
 ---
 
 ## 👥 Team Nexora
-
-- **Kanak Narware** — *Team Lead & Embedded Systems / Hardware Architecture*
-- **Team Nexora Members** — *DSP Engineering, Subsea Firmware, Power Optimization & Web Platform*
-
 ---
 
 ## 📄 License & Compliance
